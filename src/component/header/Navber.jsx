@@ -3,9 +3,17 @@ import logoImage from "../../assets/images/logo.png"
 import githubImage from "../../assets/images/github.png"
 
 export default function Navber() {
+
+    const links = <>
+        <li><a>Home</a></li>
+        <li><a>Apps</a></li>
+        <li><a>Installation</a></li>
+    
+    </>
+
   return (
     <>
-        <div className='w-[1600px] mx-auto bg-base-100 '>
+        <div className='bg-base-100 max-w-7xl mx-auto'>
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -15,8 +23,7 @@ export default function Navber() {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Item 1</a></li>
-                        <li><a>Item 3</a></li>
+                        {links}
                     </ul>
                     </div>
                     <img className='w-[40px]' src={logoImage} alt="" />
@@ -24,9 +31,7 @@ export default function Navber() {
                 </div>
                 <div className="navbar-center hidden lg:flex justify-center items-center">
                     <ul className="menu menu-horizontal px-2 text-[16px] font-semibold hover:bg-amber-0">
-                        <li><a>Home</a></li>
-                        <li><a>Apps</a></li>
-                        <li><a>Installation</a></li>
+                        {links}
                     </ul>
                 </div>
                 <div className="navbar-end">
