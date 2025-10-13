@@ -1,15 +1,18 @@
 import React from 'react'
 import logoImage from "../../assets/images/logo.png"
 import githubImage from "../../assets/images/github.png"
+import { NavLink } from 'react-router'
+
+
 
 export default function Navber() {
 
-    const links = <>
-        <li><a>Home</a></li>
-        <li><a>Apps</a></li>
-        <li><a>Installation</a></li>
+    // const links = <>
+    //     <li><a>Home</a></li>
+    //     <li><a>Apps</a></li>
+    //     <li><a>Installation</a></li>
     
-    </>
+    // </>
 
   return (
     <>
@@ -23,7 +26,15 @@ export default function Navber() {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        {links}
+                        <li>
+                            <NavLink to='/'>Home</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/Apps'>Apps</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/Installation'>Installation</NavLink>
+                        </li>
                     </ul>
                     </div>
                     <img className='w-[40px]' src={logoImage} alt="" />
@@ -31,7 +42,16 @@ export default function Navber() {
                 </div>
                 <div className="navbar-center hidden lg:flex justify-center items-center">
                     <ul className="menu menu-horizontal px-2 text-[16px] font-semibold hover:bg-amber-0">
-                        {links}
+                        {/* {links} */}
+                        <li>
+                            <NavLink to='/'>Home</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/Apps'>Apps</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/Installation'>Installation</NavLink>
+                        </li>
                     </ul>
                 </div>
                 <div className="navbar-end">
