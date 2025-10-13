@@ -1,12 +1,14 @@
 import React from 'react'
 import Banner from '../../component/banner/Banner'
 import TrastArea from '../../component/trastArea/TrastArea'
-import { useLoaderData } from 'react-router'
+import { Link, useLoaderData } from 'react-router'
 import AppCard from '../../component/appCard/AppCard';
+import useApps from '../../hooks/useApps';
 
 export default function Home() {
-  const allApps = useLoaderData();
-  console.log(allApps);
+  // const allApps = useLoaderData();
+  const {apps, loading, error}= useApps();
+  const featureApp = apps.slice(0, 8);
   return (
     <div>
 
@@ -19,11 +21,15 @@ export default function Home() {
           </div>
           <div className='mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-1 gap-y-7 max-w-7xl mx-auto'>
             {
-              allApps.map (app => (
+              featureApp.map (app => (
                 <AppCard key ={app.id} app ={app}></AppCard>
               ))
             }
           </div>
+          <div className='text-center mt-12'>
+              <Link to ="/Apps" className='btn btn-primary font-semibold text-[16px]'>Show All</Link>
+          </div>
+          
         </div>
         
 

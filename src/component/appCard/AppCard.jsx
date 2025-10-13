@@ -5,7 +5,7 @@ import starImg from "../../assets/images/icon-ratings.png"
 export default function AppCard({app}) {
     console.log(app)
   return (
-    <div className="card bg-base-200 p-4 w-72 gap-3 shadow-sm">
+    <div className="card bg-base-200 p-4 w-72 gap-3 shadow-sm hover:scale-105 ease-in-out transition">
         <figure>
             <img className='w-[200px]'
             src={app.image}
